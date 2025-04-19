@@ -46,19 +46,21 @@ const technologies = [
 ];
 
 export default function AboutSection() {
+  // Set a very low threshold so content appears immediately as the section comes into view
+  // rootMargin makes it trigger even before the section is fully in view
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0,
+    rootMargin: '200px 0px', // This will trigger 200px before the element enters the viewport
   });
 
   return (
-    <section id="about" className="py-20 md:py-28 relative bg-background">
+    <section id="about" className="py-20 md:py-28 relative bg-background" ref={ref}>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] pointer-events-none" />
 
       <div className="container mx-auto px-4">
         <motion.div
-          ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={{
@@ -66,7 +68,7 @@ export default function AboutSection() {
             visible: {
               opacity: 1,
               transition: {
-                staggerChildren: 0,
+                staggerChildren: 0.1,
               },
             },
           }}
@@ -87,7 +89,6 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Company Story */}
           <motion.div
-            ref={ref}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={{
@@ -95,7 +96,7 @@ export default function AboutSection() {
               visible: {
                 opacity: 1,
                 transition: {
-                  staggerChildren: 0,
+                  staggerChildren: 0.1,
                 },
               },
             }}
@@ -128,7 +129,6 @@ export default function AboutSection() {
 
           {/* Company Image */}
           <motion.div
-            ref={ref}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.6 }}
@@ -146,7 +146,6 @@ export default function AboutSection() {
 
         {/* Technologies */}
         <motion.div
-          ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={{
@@ -154,7 +153,7 @@ export default function AboutSection() {
             visible: {
               opacity: 1,
               transition: {
-                delayChildren: 0.3,
+                delayChildren: 0.2,
                 staggerChildren: 0.1,
               },
             },
