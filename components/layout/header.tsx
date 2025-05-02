@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Cpu } from "lucide-react";
 import { useMotionValueEvent, useScroll, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-
+import Image from "next/image";
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About Us" },
@@ -53,7 +53,7 @@ export default function Header() {
         "fixed top-0 z-50 w-full transition-all duration-300",
         isScrolled
           ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent"
+          : "bg-background/5"
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -62,10 +62,13 @@ export default function Header() {
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Cpu className="h-8 w-8 text-primary" />
-          <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-blue-400 dark:to-violet-400">
-          SoftNovaX
-          </span>
+        <Image 
+            src={"/images/logo-softnovax-blue.webp" }
+            alt="SoftNovaX Logo" 
+            width={200} 
+            height={60} 
+            className="h-20 w-auto"
+              />
         </Link>
 
         {/* Desktop Navigation */}

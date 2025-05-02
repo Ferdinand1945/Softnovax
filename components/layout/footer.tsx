@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Cpu, Github, Twitter, Linkedin, Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image"; // Added Image import
+import { Github, Twitter, Linkedin, Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -11,10 +12,14 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Cpu className="h-8 w-8 text-primary" />
-              <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-blue-400 dark:to-violet-400">
-              SoftNovaX
-              </span>
+              {/* Replaced Cpu icon and span with Image */}
+              <Image 
+                src={"/images/logo-softnovax-blue.webp" }
+                alt="SoftNovaX Logo" 
+                width={200} 
+                height={60} 
+                className="h-20 w-auto"
+              />
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
               Empowering innovation with cutting-edge technology solutions for the future.
@@ -38,6 +43,7 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Rest of the footer remains the same... */}
           {/* Navigation Links */}
           <div className="col-span-1">
             <h3 className="font-semibold text-lg mb-4">Company</h3>

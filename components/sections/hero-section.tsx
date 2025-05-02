@@ -92,7 +92,7 @@ const FlashlightTextReveal: React.FC = () => {
   return (
     <div 
       ref={containerRef}
-      className="flex items-center justify-center w-full h-full rounded-lg relative overflow-hidden "
+      className=" items-center justify-center w-full h-full rounded-lg relative overflow-hidden hidden md:flex"
       // Remove cursor: none to keep default cursor visible
     >
 
@@ -180,7 +180,7 @@ export default function HeroSection(): JSX.Element {
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-gray-900 to-black/80 z-0" />
 
-      <div className="container mx-auto px-4 z-10">
+      <div className="con tainer mx-auto px-4 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
@@ -203,11 +203,14 @@ export default function HeroSection(): JSX.Element {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6"
             >
-              Innovative Software{" "}
+              Building the 
+              <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
+              Future
+              </span> of{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
-                Solutions
+              Digital
               </span>{" "}
-              for Tomorrow
+              Interaction
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -215,7 +218,7 @@ export default function HeroSection(): JSX.Element {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl text-muted-foreground mb-8 max-w-md"
             >
-              Empowering businesses with cutting-edge technology to solve the most complex challenges and drive digital transformation.
+              We build smart, user-centered platforms that redefine how people connect, buy, and sell online. Empowering the Next era of Smart Platforms for a Decentralized Future.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -223,13 +226,13 @@ export default function HeroSection(): JSX.Element {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button size="lg" className="group">
+              {/* <Button size="lg" className="group">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline">
                 Learn More
-              </Button>
+              </Button> */}
             </motion.div>
           </motion.div>
 
@@ -238,7 +241,7 @@ export default function HeroSection(): JSX.Element {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="order-1 lg:order-2 h-[400px] lg:h-[500px] w-full relative"
+            className="hidden md:block order-1 lg:order-2 h-[400px] lg:h-[500px] w-full relative"
           >
             {loaded && <FlashlightTextReveal />}
           </motion.div>
