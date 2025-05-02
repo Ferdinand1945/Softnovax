@@ -9,7 +9,7 @@ import Footer from '@/components/layout/footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'SoftNovaX Solutions - Innovative Software Company',
+  title: 'Softnovax',
   description: 'SoftNovaX Solutions is a cutting-edge software company specializing in next-generation technology solutions.',
 };
 
@@ -20,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.webp"/>
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
