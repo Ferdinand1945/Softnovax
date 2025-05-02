@@ -180,7 +180,7 @@ export default function HeroSection(): JSX.Element {
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-gray-900 to-black/80 z-0" />
 
-      <div className="con tainer mx-auto px-4 z-10">
+      <div className="container mx-auto px-4 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
