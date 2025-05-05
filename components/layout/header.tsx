@@ -53,7 +53,7 @@ export default function Header() {
         "fixed top-0 z-50 w-full transition-all duration-300",
         isScrolled
           ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-background/5"
+          : "bg-background"
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}

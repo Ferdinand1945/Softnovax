@@ -92,15 +92,9 @@ const FlashlightTextReveal: React.FC = () => {
   return (
     <div 
       ref={containerRef}
-      className=" items-center justify-center w-full h-full rounded-lg relative overflow-hidden hidden md:flex"
+      className="items-center justify-center w-full h-full rounded-lg relative overflow-hidden hidden md:flex"
       // Remove cursor: none to keep default cursor visible
     >
-
-      
-      {/* Custom flashlight cursor - make it larger */}
-     
-      
-  
       
       {/* Hidden words */}
       {words.map((word, index) => {
@@ -119,9 +113,8 @@ const FlashlightTextReveal: React.FC = () => {
           >
             {/* The word with a clipped region that becomes visible */}
             <div 
-              className="relative"
+              className="relative dark:text-white text-black"
               style={{
-                color: 'white',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 WebkitTextStroke: '0px',
@@ -177,8 +170,8 @@ export default function HeroSection(): JSX.Element {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-16"
     >
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-gray-900 to-black/80 z-0" />
+      {/* Background - Light/Dark Mode Responsive */}
+      <div className="absolute inset-0 bg-[#eee] dark:bg-gradient-to-b dark:from-gray-950 dark:via-gray-900 dark:to-black/80 z-0" />
 
       <div className="container mx-auto px-4 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -193,7 +186,7 @@ export default function HeroSection(): JSX.Element {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="inline-block mb-4 px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium"
+              className="inline-block mb-4 px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium"
             >
               Welcome to the future of technology
             </motion.div>
@@ -201,13 +194,13 @@ export default function HeroSection(): JSX.Element {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6 text-gray-800 dark:text-white"
             >
               Building the 
-              <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
+              <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-violet-500 dark:from-blue-400 dark:to-violet-400">
               Future
               </span> of{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-violet-500 dark:from-blue-400 dark:to-violet-400">
               Digital
               </span>{" "}
               Interaction
@@ -216,7 +209,7 @@ export default function HeroSection(): JSX.Element {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl text-muted-foreground mb-8 max-w-md"
+              className="text-xl text-gray-600 dark:text-muted-foreground mb-8 max-w-md"
             >
               We build smart, user-centered platforms that redefine how people connect, buy, and sell online. Empowering the Next era of Smart Platforms for a Decentralized Future.
             </motion.p>
@@ -254,14 +247,14 @@ export default function HeroSection(): JSX.Element {
           transition={{ delay: 1, duration: 0.8 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
         >
-          <Link href="#about" className="text-sm text-muted-foreground">
+          <Link href="#about" className="text-sm text-gray-600 dark:text-muted-foreground">
             Scroll to explore
           </Link>
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
-            <ChevronDown className="h-5 w-5 mt-2" />
+            <ChevronDown className="h-5 w-5 mt-2 text-gray-600 dark:text-white" />
           </motion.div>
         </motion.div>
       </div>

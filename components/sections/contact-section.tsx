@@ -236,7 +236,7 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mt-1">
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
@@ -245,9 +245,9 @@ export default function ContactSection() {
                     <p className="text-muted-foreground">+1 (555) 123-4567</p>
                     <p className="text-muted-foreground">+1 (555) 987-6543</p>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mt-1">
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
@@ -256,10 +256,10 @@ export default function ContactSection() {
                     <p className="text-muted-foreground">123 Innovation Drive</p>
                     <p className="text-muted-foreground">Tech City, CA 94103</p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
-              <div>
+              {/* <div>
                 <h4 className="font-medium mb-4">Business Hours</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
@@ -275,7 +275,7 @@ export default function ContactSection() {
                     <span>Closed</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>

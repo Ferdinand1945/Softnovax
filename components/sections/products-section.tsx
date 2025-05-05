@@ -84,11 +84,12 @@ const fadeInUp = {
 export default function ProductsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [carouselRef, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true, // Changed to true so animation only happens once
     threshold: 0.1,
+    rootMargin: "0px 0px -10% 0px", // Added margin to trigger earlier
   });
   const [headerRef, headerInView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true, // Changed to true so animation only happens once
     threshold: 0.1,
   });
 
@@ -111,7 +112,8 @@ export default function ProductsSection() {
         <motion.div
           ref={headerRef}
           initial="hidden"
-          animate={headerInView ? "visible" : "hidden"}
+          whileInView="visible" // Changed from animate to whileInView
+          viewport={{ once: true }} // Ensures the animation only happens once
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -135,12 +137,12 @@ export default function ProductsSection() {
           </motion.p>
         </motion.div>
 
+        {/* Removed the dependency on inView for this section's visibility */}
         <motion.div
           ref={carouselRef}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial="visible" // Always start visible
+          animate="visible" // Always stay visible
           variants={{
-            hidden: { opacity: 0 },
             visible: {
               opacity: 1,
               transition: {
@@ -250,10 +252,11 @@ export default function ProductsSection() {
           </div>
         </motion.div>
 
-        {/* Product Cards */}
+        {/* Product Cards - Changed to always be visible */}
         <motion.div
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible" // Use whileInView instead of animate
+          viewport={{ once: true }} // Ensures animation only happens once
           variants={{
             hidden: { opacity: 0 },
             visible: {

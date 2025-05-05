@@ -51,17 +51,17 @@ export default function Footer() {
               <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 About Us
               </Link>
-              <Link href="#careers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              {/* <Link href="#careers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Careers
               </Link>
               <Link href="#blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Blog
-              </Link>
+              </Link> */}
               <Link href="#news" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 News
               </Link>
               <Link href="#partners" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Partners
+                Projects
               </Link>
             </nav>
           </div>
@@ -70,21 +70,10 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="font-semibold text-lg mb-4">Products</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="#products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                AI Solutions
+              <Link href="https://regalia-front.vercel.app/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                SubaStar
               </Link>
-              <Link href="#products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Cloud Services
-              </Link>
-              <Link href="#products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Data Analytics
-              </Link>
-              <Link href="#products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                IoT Platform
-              </Link>
-              <Link href="#products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Enterprise Solutions
-              </Link>
+             
             </nav>
           </div>
 
@@ -92,24 +81,24 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <div className="space-y-3">
-              <div className="flex items-start gap-3">
+              {/* <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
                 <span className="text-sm text-muted-foreground">
                   123 Innovation Drive, Tech City, CA 94103
                 </span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">
                   info@softnovax.com
                 </span>
               </div>
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">
                   +1 (555) 123-4567
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -117,7 +106,7 @@ export default function Footer() {
         <Separator className="my-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} SoftNovaX Solutions. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Softnovax Solutions. All rights reserved.</p>
           <div className="flex mt-4 md:mt-0 space-x-6">
             <Link href="/privacy" className="hover:text-foreground transition-colors">
               Privacy Policy
