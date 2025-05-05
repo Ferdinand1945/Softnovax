@@ -103,7 +103,7 @@ export default function ProductsSection() {
   };
 
   return (
-    <section id="products" className="py-20 md:py-28 relative">
+    <section id="products" className="pt-20 md:pt-28 relative">
       {/* Background effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] pointer-events-none" />
       
