@@ -81,8 +81,7 @@ export default function AboutSection() {
             Pioneering the Future of Software Solutions
           </motion.h2>
           <motion.p variants={fadeIn} className="text-lg text-muted-foreground">
-            We are a team of passionate technologists committed to creating innovative solutions 
-            that empower businesses to thrive in the digital age.
+            We are a a tech company focused on creating innovative solutions that transform how people and businesses engage with digital commerce.
           </motion.p>
         </motion.div>
 
@@ -105,7 +104,7 @@ export default function AboutSection() {
               Our Story
             </motion.h3>
             <motion.p variants={fadeIn} className="text-muted-foreground mb-6">
-              Founded in 2023, SoftNovaX Solutions was born out of a vision to bridge the gap between 
+              Founded in 2024, SoftNovaX Solutions was born out of a vision to bridge the gap between 
               cutting-edge technology and practical business applications. 
             </motion.p>
             <motion.p variants={fadeIn} className="text-muted-foreground mb-8">
