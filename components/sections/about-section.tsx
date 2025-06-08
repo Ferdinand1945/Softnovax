@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
-import { Code, Cloud, Zap, BarChart4 } from "lucide-react";
+import { Code, Cloud, Zap, BarChart4, Linkedin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const stats = [
@@ -100,14 +100,18 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-center"
               >
-                <div className="relative w-52 h-52 mx-auto mb-4 rounded-full overflow-hidden shadow-xl">
+                <div className="relative w-52 h-52 mx-auto mb-4 rounded-full overflow-hidden shadow-xl group cursor-pointer">
                   <Image
                     src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2"
                     alt="CTO"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  {/* LinkedIn Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <Linkedin className="w-8 h-8 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100" />
+                  </div>
                 </div>
                 <h4 className="text-lg font-semibold text-foreground">CTO</h4>
               </motion.div>
@@ -119,14 +123,18 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-center"
               >
-                <div className="relative w-52 h-52 mx-auto mb-4 rounded-full overflow-hidden shadow-xl">
+                <div className="relative w-52 h-52 mx-auto mb-4 rounded-full overflow-hidden shadow-xl group cursor-pointer">
                   <Image
                     src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2"
                     alt="CEO"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  {/* LinkedIn Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <Linkedin className="w-8 h-8 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100" />
+                  </div>
                 </div>
                 <h4 className="text-lg font-semibold text-foreground">CEO</h4>
               </motion.div>
@@ -138,14 +146,18 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-center"
               >
-                <div className="relative w-52 h-52 mx-auto mb-4 rounded-full overflow-hidden shadow-xl">
+                <div className="relative w-52 h-52 mx-auto mb-4 rounded-full overflow-hidden shadow-xl group cursor-pointer">
                   <Image
                     src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2"
                     alt="Lead Developer"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  {/* LinkedIn Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <Linkedin className="w-8 h-8 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100" />
+                  </div>
                 </div>
                 <h4 className="text-lg font-semibold text-foreground">Lead Developer</h4>
               </motion.div>
