@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2, Mail, Phone, MapPin, Send } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
+import { useI18n } from "@/components/i18n-provider";
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -40,6 +41,7 @@ const fadeIn = {
 };
 
 export default function ContactSection() {
+  const { t } = useI18n();
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -66,8 +68,8 @@ export default function ContactSection() {
       form.reset();
       
       // Show success toast
-      toast.success("Message sent successfully", {
-        description: "We'll get back to you as soon as possible.",
+      toast.success(t("toast.sent"), {
+        description: t("toast.sent.desc"),
       });
     }, 1500);
   }
@@ -93,15 +95,14 @@ export default function ContactSection() {
           }}
           className="max-w-screen-md mx-auto text-center mb-16"
         >
-          <motion.div variants={fadeIn} className="inline-block mb-4 px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium">
-            Get In Touch
+          <motion.div variants={fadeIn} className="inline-block mb-4 px-4 py-1 rounded-full border border-border text-muted-foreground text-sm">
+            {t("contact.kicker")}
           </motion.div>
           <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Business?
+            {t("contact.title")}
           </motion.h2>
           <motion.p variants={fadeIn} className="text-lg text-muted-foreground">
-            Contact us today to discuss how our solutions can help you achieve your business goals.
-            Our team of experts is ready to assist you.
+            {t("contact.subtitle")}
           </motion.p>
         </motion.div>
 
@@ -130,9 +131,9 @@ export default function ContactSection() {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Name</FormLabel>
+                            <FormLabel>{t("contact.form.name")}</FormLabel>
                             <FormControl>
-                              <Input placeholder="Your name" {...field} />
+                              <Input placeholder={t("contact.form.name")} {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -143,7 +144,7 @@ export default function ContactSection() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Email</FormLabel>
+                            <FormLabel>{t("contact.form.email")}</FormLabel>
                             <FormControl>
                               <Input placeholder="your.email@example.com" {...field} />
                             </FormControl>
@@ -157,9 +158,9 @@ export default function ContactSection() {
                       name="company"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Company (Optional)</FormLabel>
+                          <FormLabel>{t("contact.form.company")}</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your company" {...field} />
+                            <Input placeholder={t("contact.form.company")} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -170,10 +171,10 @@ export default function ContactSection() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message</FormLabel>
+                          <FormLabel>{t("contact.form.message")}</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="How can we help you?" 
+                              placeholder={t("contact.form.placeholder")} 
                               className="min-h-32" 
                               {...field} 
                             />
@@ -186,12 +187,12 @@ export default function ContactSection() {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Sending...
+                          {t("contact.sending")}
                         </>
                       ) : (
                         <>
                           <Send className="mr-2 h-4 w-4" />
-                          Send Message
+                          {t("contact.send")}
                         </>
                       )}
                     </Button>
@@ -217,7 +218,7 @@ export default function ContactSection() {
           >
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-semibold mb-6">{t("contact.info")}</h3>
                 <p className="text-muted-foreground mb-8">
                   Our team is here to help. Reach out to us through any of the channels below 
                   and we'll respond as soon as possible.
@@ -230,7 +231,7 @@ export default function ContactSection() {
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Email Us</h4>
+                    <h4 className="font-medium mb-1">{t("contact.emailUs")}</h4>
                     <p className="text-muted-foreground">info@softnovax.com</p>
                     <p className="text-muted-foreground">support@softnovax.com</p>
                   </div>

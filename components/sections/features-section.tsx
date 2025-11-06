@@ -13,6 +13,7 @@ import {
   Layers
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/components/i18n-provider";
 
 const features = [
   {
@@ -67,6 +68,7 @@ const fadeInUp = {
 };
 
 export default function FeaturesSection() {
+  const { t } = useI18n();
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -93,15 +95,14 @@ export default function FeaturesSection() {
           }}
           className="max-w-screen-md mx-auto text-center mb-16"
         >
-          <motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium">
-            Why Choose Us
+          <motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1 rounded-full border border-border text-muted-foreground text-sm">
+            {t("features.kicker")}
           </motion.div>
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-6">
-            Features that Set Us Apart
+            {t("features.title")}
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-            Our cutting-edge platform delivers exceptional capabilities that help your business stay 
-            ahead in today's rapidly evolving technological landscape.
+            {t("features.subtitle")}
           </motion.p>
         </motion.div>
 
@@ -135,7 +136,13 @@ export default function FeaturesSection() {
                 <feature.icon className="h-6 w-6 text-white" />
               </div>
               <div className="pt-8">
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-semibold mb-3">
+                  {index === 0 && t("features.fast")}
+                  {index === 1 && t("features.secure")}
+                  {index === 2 && t("features.integrations")}
+                  {index === 3 && t("features.global")}
+                  {index > 3 && feature.title}
+                </h3>
                 <p className="text-muted-foreground text-sm">{feature.description}</p>
               </div>
             </motion.div>

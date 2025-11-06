@@ -8,14 +8,17 @@ import { Menu, X, Cpu } from "lucide-react";
 import { useMotionValueEvent, useScroll, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useI18n } from "@/components/i18n-provider";
+import LanguageDropdown from "@/components/language-dropdown";
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About Us" },
-  { href: "#products", label: "Products" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home", key: "nav.home" },
+  { href: "#about", key: "nav.about" },
+  { href: "#products", key: "nav.products" },
+  { href: "#contact", key: "nav.contact" },
 ];
 
 export default function Header() {
+  const { t } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
@@ -79,20 +82,21 @@ export default function Header() {
               href={link.href}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              {link.label}
+              {t(link.key)}
             </Link>
           ))}
         </nav>
 
         {/* Actions */}
         <div className="flex items-center gap-2">
+          <LanguageDropdown />
           <ThemeToggle />
           <Button
             variant="default"
             size="sm"
             className="hidden md:inline-flex"
           >
-            Get Started
+            {t("cta.getStarted")}
           </Button>
           
           {/* Mobile Menu Button */}
@@ -125,10 +129,10 @@ export default function Header() {
                 className="text-lg font-medium py-2 border-b border-border"
                 onClick={() => setIsOpen(false)}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
-            <Button className="w-full mt-4">Get Started</Button>
+            <Button className="w-full mt-4">{t("cta.getStarted")}</Button>
           </nav>
         </motion.div>
       )}
