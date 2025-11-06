@@ -70,7 +70,7 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="font-semibold text-lg mb-4">Products</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="https://regalia-front.vercel.app/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://subastar.shop" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 SubaStar
               </Link>
              
